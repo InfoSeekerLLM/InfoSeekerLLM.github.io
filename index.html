@@ -130,7 +130,7 @@
         -->
       <h2 class="subtitle has-text-centered">
         <strong>Overcoming uncertainty through information seeking.</strong>
-        When tasked with moving a robot gripper to a target location using miscalibrated controllers that introduce a constant (1, 0) offset to every command, existing planners <span style="color: orange;">(bottom)</span> fail by over-relying on presumed dynamics without verifying them. In contrast, <span class="method-name" style="color: blue;">Method</span> <span style="color: blue;">(top)</span> actively seeks information, detects discrepancies between commanded and executed motions, and updates its internal dynamics to generate a correct plan.
+        Existing planners <span style="color: orange;">(bottom)</span> fail by over-relying on presumed dynamics without verifying them. In contrast, <span class="method-name" style="color: blue;">InfoSeeker</span> <span style="color: blue;">(top)</span> actively seeks information, detects discrepancies between commanded and executed motions, and updates its internal dynamics to generate a correct plan.
       </h2>
     </div>
   </div>
@@ -200,7 +200,7 @@
     <div class="hero-body">
       <div class="container is-max-desktop">
           <div class="item item-video0 has-text-centered">
-            <h3 class="title is-3">Try Our Interactive Benchmark</h3>
+            <h3 class="title is-3">Our Text-Based Interactive Benchmark</h3>
           </div>
             <p style="text-align: center;">
               Check our
@@ -209,7 +209,19 @@
               about how to setup and play for yourself !
             </p>
             <br>
+              <div class="content has-text-justified">
+                <p>
+                  We introduce a suite of text-based simulation benchmarks for evaluating the robustness of LLM agents in partially observable environments with noisy environmental dynamics.
+                  Existing benchmarks consider only uncertainty in observations, where actions always yield predictable outcomes (e.g., “turn on lamp” action exactly turns on the lamp).
+                  In contrast, we consider incorporating uncertain dynamics: actions may fail due to unmodeled factors, such as control errors or environmental noise.
+                  This setup highlights the critical challenges of decision-making in real-world scenarios.
+                  To contrast agent performance under both certain and uncertain dynamics, we implement each task in two configurations: a <strong>Basic</strong> version, which resembles existing benchmarks, and a <strong>Perturbed</strong> version that additionally incorporates noisy dynamics.
+                </p>
+              </div>
+            <br>
               <center>
+                <br>
+                Setup our benchmark from GitHub:
                 <code class="column is-three-fifths hero is-dark" style="text-align: left;">
                   git clone https://github.com/InfoSeekerLLM/InfoSeeker.git<br>
                   conda create -n infoseeker python=3.12<br>
