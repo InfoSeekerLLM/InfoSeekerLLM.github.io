@@ -53,9 +53,9 @@
           <h1 class="title is-1 publication-title">Information Seeking for Robust Decision Making under Partial Observability</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://keunhong.com">Djengo Cyun-Jyun Fang</a><sup>1</sup>,</span>
+              Djengo Cyun-Jyun Fang</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://jonbarron.info">Tsung-Wei Ke</a><sup>2</sup>,
+              Tsung-Wei Ke</a><sup>1</sup>,
           </div>
 
           <div class="is-size-5 publication-authors">
@@ -85,7 +85,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/TUM-AVS/paper-website-project"
+                <a href="https://github.com/InfoSeekerLLM/InfoSeeker"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -100,6 +100,20 @@
     </div>
   </div>
 </section>
+
+<style>
+.hero-body {
+  text-align: center; /* or use flexbox if you prefer */
+}
+</style>
+<style>
+.teaser-image {
+  width: 1000px;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* centers the image if display is block */
+}
+</style>
 
 <section class="hero teaser">
   <div class="container is-max-desktop">
@@ -131,30 +145,54 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Explicit information seeking is essential to human problem-solving in practical environments characterized by incomplete information and noisy dynamics. When the true environmental state is not directly observable, humans seek information to update their internal dynamics and inform future decision-making. Although existing Large Language Model (LLM) planning agents have addressed observational uncertainty, they often overlook discrepancies between their internal dynamics and the actual environment. We introduce Information Seeking Decision Planner (InfoSeeker), an LLM decision-making framework that integrates task-oriented planning with information seeking to align internal dynamics and make optimal decisions under uncertainty in both agent observations and environmental dynamics. InfoSeeker prompts an LLM to actively gather information by planning actions to validate its understanding, detect environmental changes, or test hypotheses before generating or revising task-oriented plans. To evaluate InfoSeeker, we introduce a novel benchmark suite featuring partially observable environments with incomplete observations and uncertain dynamics. Experiments demonstrate that InfoSeeker achieves a 74% absolute performance gain over prior methods without sacrificing sample efficiency. Moreover, InfoSeeker generalizes across LLMs and outperforms baselines on established benchmarks such as robotic manipulation and web navigation. These findings underscore the importance of tightly integrating planning and information seeking for robust behavior in partially observable environments.You can add the abstract of your paper here!
+            Explicit information seeking is essential to human problem-solving in practical environments characterized by incomplete information and noisy dynamics. When the true environmental state is not directly observable, humans seek information to update their internal dynamics and inform future decision-making. Although existing Large Language Model (LLM) planning agents have addressed observational uncertainty, they often overlook discrepancies between their internal dynamics and the actual environment. We introduce Information Seeking Decision Planner (InfoSeeker), an LLM decision-making framework that integrates task-oriented planning with information seeking to align internal dynamics and make optimal decisions under uncertainty in both agent observations and environmental dynamics. InfoSeeker prompts an LLM to actively gather information by planning actions to validate its understanding, detect environmental changes, or test hypotheses before generating or revising task-oriented plans. To evaluate InfoSeeker, we introduce a novel benchmark suite featuring partially observable environments with incomplete observations and uncertain dynamics. Experiments demonstrate that InfoSeeker achieves a 74% absolute performance gain over prior methods without sacrificing sample efficiency. Moreover, InfoSeeker generalizes across LLMs and outperforms baselines on established benchmarks such as robotic manipulation and web navigation. These findings underscore the importance of tightly integrating planning and information seeking for robust behavior in partially observable environments.
           </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
 
-    <!-- Paper video. -->
+    <!-- Method. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        
-        <h2 class="title is-3">Video</h2>
+      
+        <h2 class="title is-3">Information Seeking Decision Planner (InfoSeeker)</h2>
+
+        <div class="publication-image">
+          <img src="./static/images/compare.jpg" alt="Compare" style="max-width: 100%; height: auto;">
+        </div>
+
         <div class="content has-text-justified">
           <p>
-            You can add an explanation Youtube video of your paper here!
+            <strong>Comparison with Prior LLM-Based Planners.</strong>
+            <strong>(a)</strong>
+            InfoSeeker validates its internal dynamics before planning,
+            while <strong>(b)</strong> existing approaches depend solely on execution feedback and fixed assumptions.
+            This difference enables InfoSeeker to succeed in environments with uncertain observations and dynamics.
           </p>
         </div>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/r7jcbH5vq-g?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      
+        <div class="publication-image">
+          <img src="./static/images/method.jpg" alt="Method" style="max-width: 100%; height: auto;">
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
+            <strong>System Architecture Overview.</strong>
+            Our InfoSeeker integrates <em>Information Seeking</em> 
+            <span style="color: red;">(top-right)</span> and 
+            <em>Task-Oriented Planning</em> 
+            <span style="color: blue;">(bottom-left)</span> in a closed-loop process. 
+            InfoSeeker formulates and executes strategies to acquire missing knowledge, 
+            addressing gaps in its internal dynamics before generating more effective task plans. 
+            This iterative approach, supported by the reasoning capabilities of LLMs, 
+            enables InfoSeeker to reduce uncertainty and enhance planning effectiveness.
+          </p>
         </div>
       </div>
     </div>
-    <!--/ Paper video. -->
+    <!--/ Method. -->
+    
   </div>
 </section>
 
@@ -162,31 +200,26 @@
     <div class="hero-body">
       <div class="container is-max-desktop">
           <div class="item item-video0 has-text-centered">
-            <h3 class="title is-3">Try it for yourself</h3>
-            <video poster="" id="video0" autoplay controls muted loop playsinline center width="70%">
-              <!-- Your video file here -->
-              <source src="static/videos/tryout.mp4"
-              type="video/mp4">
-            </video>
+            <h3 class="title is-3">Try Our Interactive Benchmark</h3>
           </div>
             <p style="text-align: center;">
-              Check the tutorial about how to start to build paper website for yourself:
+              Check our
               <i class="fab fa-github"><a class="icon-link" href="https://github.com/TUM-AVS/paper-website-project" class="external-link"></a></i>
-              <a href="https://github.com/TUM-AVS/paper-website-project">Tutorial </a>
+              <a href="https://github.com/InfoSeekerLLM/InfoSeeker">GitHub </a>
+              about how to setup and play for yourself !
             </p>
             <br>
               <center>
                 <code class="column is-three-fifths hero is-dark" style="text-align: left;">
-                  git clone https://github.com/TUM-AVS/paper-website-project.git<br>
-                  cd paper-website-project<br>
-                  etc.<br>
-                  <br>
-                  <br>
+                  git clone https://github.com/InfoSeekerLLM/InfoSeeker.git<br>
+                  conda create -n infoseeker python=3.12<br>
+                  conda activate infoseeker<br>
+                  pip install -r requirements.txt<br>
                 </code>
                 <br>
-                Other <a href="https://github.com/TUM-AVS/paper-website-project">code</a> instructions:
+                Interact with our benchmark using user console:
                 <code class="column is-three-fifths hero is-dark" style="text-align: left;">
-                  etc.<br>
+                  python human.py --task block_stacking_multiple_basic<br>
                 </code>
                 <br>
               </center>
@@ -194,8 +227,72 @@
     </div>
   </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Visual. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+      
+        <h2 class="title is-3">Planning Visualization</h2>
 
+        <div class="publication-image">
+          <img src="./static/images/visual.png" alt="Compare" style="max-width: 100%; height: auto;">
+        </div>
 
+        <div class="content has-text-justified">
+          <p>
+            <strong>Visualization of InfoSeeker and LLM3 (<em>from scratch</em>) in perturbed environments. </strong>
+            <strong>(a)</strong> Robotic arm guidance to target (1.0, 2.0) with a fixed action offset (-0.1, -0.1).
+            <strong>(b)</strong> Paint mixing for seagreen (yellow + black) using mislabeled tubes: the "red" tube contains white, "blue" contains red, "white" contains black, and "black" contains blue.
+            <strong>(c)</strong> Navigate to ball at (1, 0) and deliver it to goal location (2, 0) under inverted action mappings ("left" moves right, "forward" moves backward).
+            <strong>(d)</strong> Rearranging blocks to match a target configuration, starting with a hidden inventory (contains a red block).
+            Across these perturbations, InfoSeeker adapts through information seeking and feedback, while LLM3 repeatedly failed due to persistent misinterpretation.
+          </p>
+        </div>
+      
+      </div>
+    </div>
+    <!--/ Visual. -->
+
+    <!-- Results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+      
+        <h2 class="title is-3">Quantitative Results</h2>
+
+        <div class="publication-image">
+          <img src="./static/images/results.png" alt="Results" style="max-width: 100%; height: auto;">
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
+            <strong>Performance Evaluation on the Proposed Benchmark.</strong>
+            We report the success rate (%), defined as the proportion of tasks successfully completed within 100 interaction steps per task instance.
+            We evaluate two LLMs across five planning methods.
+            By incorporating active information seeking, InfoSeeker consistently achieves higher success rates, particularly under perturbed conditions.
+          </p>
+        </div>
+      
+      </div>
+    </div>
+    <!--/ Results. -->
+
+    <!-- Algo. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+      
+        <h2 class="title is-3">Detailed Algorithm for InfoSeeker</h2>
+
+        <div class="publication-image">
+          <img src="./static/images/algo.png" alt="Algo" style="max-width: 100%; height: auto;">
+        </div>
+      
+      </div>
+    </div>
+    <!--/ Algo. -->
+    
+  </div>
+</section>
 
 
 <section class="section" id="BibTeX">
@@ -214,14 +311,14 @@
 <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
-      <a class="icon-link" href="https://diamond-wm.github.io">
+      <a class="icon-link" href="https://infoseekerllm.github.io">
           <i class="fas fa-home"></i>
       </a>
       <a class="icon-link"
          href="https://arxiv.org/pdf/2405.12399">
         <i class="fas fa-file-pdf"></i>
       </a>
-      <a class="icon-link" href="https://github.com/eloialonso/diamond" class="external-link" disabled>
+      <a class="icon-link" href="https://github.com/InfoSeekerLLM/InfoSeeker" class="external-link" disabled>
         <i class="fab fa-github"></i>
       </a>
     </div>
