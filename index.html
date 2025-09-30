@@ -151,47 +151,6 @@
       </div>
     </div>
     <!--/ Abstract. -->
-
-    <!-- Method. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-      
-        <h2 class="title is-3">Information Seeking Decision Planner (InfoSeeker)</h2>
-
-        <div class="publication-image">
-          <img src="./static/images/compare.jpg" alt="Compare" style="max-width: 100%; height: auto;">
-        </div>
-
-        <div class="content has-text-justified">
-          <p>
-            <strong>Comparison with Prior LLM-Based Planners.</strong>
-            <strong>(a)</strong>
-            InfoSeeker validates its internal dynamics before planning,
-            while <strong>(b)</strong> existing approaches depend solely on execution feedback and fixed assumptions.
-            This difference enables InfoSeeker to succeed in environments with uncertain observations and dynamics.
-          </p>
-        </div>
-      
-        <div class="publication-image">
-          <img src="./static/images/method.jpg" alt="Method" style="max-width: 100%; height: auto;">
-        </div>
-
-        <div class="content has-text-justified">
-          <p>
-            <strong>System Architecture Overview.</strong>
-            Our InfoSeeker integrates <em>Information Seeking</em> 
-            <span style="color: red;">(top-right)</span> and 
-            <em>Task-Oriented Planning</em> 
-            <span style="color: blue;">(bottom-left)</span> in a closed-loop process. 
-            InfoSeeker formulates and executes strategies to acquire missing knowledge, 
-            addressing gaps in its internal dynamics before generating more effective task plans. 
-            This iterative approach, supported by the reasoning capabilities of LLMs, 
-            enables InfoSeeker to reduce uncertainty and enhance planning effectiveness.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Method. -->
     
   </div>
 </section>
@@ -199,63 +158,75 @@
 <section class="hero is-light">
     <div class="hero-body">
       <div class="container is-max-desktop">
-          <div class="item item-video0 has-text-centered">
-            <h3 class="title is-3">Benchmark for Planning under Noisy Dynamics</h3>
+        <!-- Method. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+          
+            <h2 class="title is-3">Information Seeking Decision Planner (InfoSeeker)</h2>
+
+            <div class="publication-image">
+              <img src="./static/images/compare.jpg" alt="Compare" style="max-width: 100%; height: auto;">
+            </div>
+
+            <div class="content has-text-justified">
+              <p>
+                <strong>Comparison with Prior LLM-Based Planners.</strong>
+                <strong>(a)</strong>
+                InfoSeeker validates its internal dynamics before planning,
+                while <strong>(b)</strong> existing approaches depend solely on execution feedback and fixed assumptions.
+                This difference enables InfoSeeker to succeed in environments with uncertain observations and dynamics.
+              </p>
+            </div>
+          
+            <div class="publication-image">
+              <img src="./static/images/method.jpg" alt="Method" style="max-width: 100%; height: auto;">
+            </div>
+
+            <div class="content has-text-justified">
+              <p>
+                <strong>System Architecture Overview.</strong>
+                Our InfoSeeker integrates <em>Information Seeking</em> 
+                <span style="color: red;">(top-right)</span> and 
+                <em>Task-Oriented Planning</em> 
+                <span style="color: blue;">(bottom-left)</span> in a closed-loop process. 
+                InfoSeeker formulates and executes strategies to acquire missing knowledge, 
+                addressing gaps in its internal dynamics before generating more effective task plans. 
+                This iterative approach, supported by the reasoning capabilities of LLMs, 
+                enables InfoSeeker to reduce uncertainty and enhance planning effectiveness.
+              </p>
+            </div>
           </div>
-            <p style="text-align: center;">
-              Check our
-              <i class="fab fa-github"><a class="icon-link" href="https://github.com/TUM-AVS/paper-website-project" class="external-link"></a></i>
-              <a href="https://github.com/InfoSeekerLLM/InfoSeeker">GitHub </a>
-              about how to setup and try it for yourself !
-            </p>
-            <br>
-              <div class="content has-text-justified">
-                <p>
-                  We introduce a suite of text-based simulation benchmarks for evaluating the robustness of LLM agents in partially observable environments with noisy environmental dynamics.
-                  Existing benchmarks consider only uncertainty in observations, where actions always yield predictable outcomes (e.g., “turn on lamp” action exactly turns on the lamp).
-                  In contrast, we consider incorporating uncertain dynamics: actions may fail due to unmodeled factors, such as control errors or environmental noise.
-                  This setup highlights the critical challenges of decision-making in real-world scenarios.
-                  To contrast agent performance under both certain and uncertain dynamics, we implement each task in two configurations: a <strong>Basic</strong> version, which resembles existing benchmarks, and a <strong>Perturbed</strong> version that additionally incorporates noisy dynamics.
-                </p>
-              </div>
-            <br>
-              <center>
-                <br>
-                Setup our benchmark from GitHub:
-                <code class="column is-three-fifths hero is-dark" style="text-align: left;">
-                  git clone https://github.com/InfoSeekerLLM/InfoSeeker.git<br>
-                  conda create -n infoseeker python=3.12<br>
-                  conda activate infoseeker<br>
-                  pip install -r requirements.txt<br>
-                </code>
-                <br>
-                Interact with our benchmark using user console:
-                <code class="column is-three-fifths hero is-dark" style="text-align: left;">
-                  python human.py --task block_stacking_multiple_basic<br>
-                </code>
-                <br>
-                Try other tasks:
-                <code class="column is-three-fifths hero is-dark" style="text-align: left;">
-                  block_stacking_multiple_basic<br>
-                  block_stacking_multiple_perturbed<br>
-                  block_stacking_single_basic<br>
-                  block_stacking_single_perturbed<br>
-                  mix_color_basic<br>
-                  mix_color_contaminated<br>
-                  mix_color_wronglabel<br>
-                  robot_arm_basic<br>
-                  robot_arm_perturbed<br>
-                  robot_navigation_basic<br>
-                  robot_navigation_perturbed<br>
-                </code>
-                <br>
-              </center>
+        </div>
+        <!--/ Method. -->
       </div>
     </div>
   </section>
 
 <section class="section">
   <div class="container is-max-desktop">
+    <!-- Results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+      
+        <h2 class="title is-3">Quantitative Results</h2>
+
+        <div class="publication-image">
+          <img src="./static/images/results.png" alt="Results" style="max-width: 100%; height: auto;">
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
+            <strong>Performance Evaluation on the Proposed Benchmark.</strong>
+            We report the success rate (%), defined as the proportion of tasks successfully completed within 100 interaction steps per task instance.
+            We evaluate two LLMs across five planning methods.
+            By incorporating active information seeking, InfoSeeker consistently achieves higher success rates, particularly under perturbed conditions.
+          </p>
+        </div>
+      
+      </div>
+    </div>
+    <!--/ Results. -->
+    
     <!-- Visual. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -280,30 +251,70 @@
       </div>
     </div>
     <!--/ Visual. -->
+  </div>
+</section>
 
-    <!-- Results. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-      
-        <h2 class="title is-3">Quantitative Results</h2>
 
-        <div class="publication-image">
-          <img src="./static/images/results.png" alt="Results" style="max-width: 100%; height: auto;">
-        </div>
-
-        <div class="content has-text-justified">
-          <p>
-            <strong>Performance Evaluation on the Proposed Benchmark.</strong>
-            We report the success rate (%), defined as the proportion of tasks successfully completed within 100 interaction steps per task instance.
-            We evaluate two LLMs across five planning methods.
-            By incorporating active information seeking, InfoSeeker consistently achieves higher success rates, particularly under perturbed conditions.
-          </p>
-        </div>
-      
+<section class="hero is-light">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+          <div class="item item-video0 has-text-centered">
+            <h3 class="title is-3">Benchmark for Planning under Noisy Dynamics</h3>
+          </div>
+            <p style="text-align: center;">
+              Check our
+              <i class="fab fa-github"><a class="icon-link" href="https://github.com/TUM-AVS/paper-website-project" class="external-link"></a></i>
+              <a href="https://github.com/InfoSeekerLLM/InfoSeeker">GitHub </a>
+              about how to setup and try InfoSeeker for yourself !
+            </p>
+            <br>
+              <div class="content has-text-justified">
+                <p>
+                  We introduce a suite of text-based simulation benchmarks for evaluating the robustness of LLM agents in partially observable environments with noisy environmental dynamics.
+                  Existing benchmarks consider only uncertainty in observations, where actions always yield predictable outcomes (e.g., “turn on lamp” action exactly turns on the lamp).
+                  In contrast, we consider incorporating uncertain dynamics: actions may fail due to unmodeled factors, such as control errors or environmental noise.
+                  This setup highlights the critical challenges of decision-making in real-world scenarios.
+                  To contrast agent performance under both certain and uncertain dynamics, we implement each task in two configurations: a <strong>Basic</strong> version, which resembles existing benchmarks, and a <strong>Perturbed</strong> version that additionally incorporates noisy dynamics.
+                </p>
+              </div>
+            <br>
+              <center>
+                <br>
+                <strong>Setup our benchmark from GitHub:</strong>
+                <code class="column is-three-fifths hero is-dark" style="text-align: left;">
+                  git clone https://github.com/InfoSeekerLLM/InfoSeeker.git<br>
+                  conda create -n infoseeker python=3.12<br>
+                  conda activate infoseeker<br>
+                  pip install -r requirements.txt<br>
+                </code>
+                <br>
+                <strong>Interact with our benchmark using user console:</strong>
+                <code class="column is-three-fifths hero is-dark" style="text-align: left;">
+                  python human.py --task block_stacking_multiple_basic<br>
+                </code>
+                <br>
+                <strong>Try other tasks:</strong>
+                <code class="column is-three-fifths hero is-dark" style="text-align: left;">
+                  block_stacking_multiple_basic<br>
+                  block_stacking_multiple_perturbed<br>
+                  block_stacking_single_basic<br>
+                  block_stacking_single_perturbed<br>
+                  mix_color_basic<br>
+                  mix_color_contaminated<br>
+                  mix_color_wronglabel<br>
+                  robot_arm_basic<br>
+                  robot_arm_perturbed<br>
+                  robot_navigation_basic<br>
+                  robot_navigation_perturbed<br>
+                </code>
+                <br>
+              </center>
       </div>
     </div>
-    <!--/ Results. -->
+  </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
     <!-- Algo. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -317,10 +328,8 @@
       </div>
     </div>
     <!--/ Algo. -->
-    
-  </div>
+      </div>
 </section>
-
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
